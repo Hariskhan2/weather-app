@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import './SearchWeather.css'
+
 
 export default function SearchWeather() {
   const [search, setSearch] = useState("Kasur");
@@ -25,15 +27,15 @@ export default function SearchWeather() {
   }, [search]);
   let emoji = null;
   if (typeof data.main != "undefined") {
-    if (data.weather[0].main == "Clouds") {
+    if (data.weather[0].main === "Clouds") {
       emoji = "fa-cloud";
-    } else if (data.weather[0].main == "Thunderstrom") {
+    } else if (data.weather[0].main === "Thunderstrom") {
       emoji = "fa-bolt";
-    } else if (data.weather[0].main == "Drizzle") {
+    } else if (data.weather[0].main === "Drizzle") {
       emoji = "fa-cloud-rain";
-    } else if (data.weather[0].main == "Rain") {
+    } else if (data.weather[0].main === "Rain") {
       emoji = "fa-cloud-shower-heavy";
-    } else if (data.weather[0].main == "Snow") {
+    } else if (data.weather[0].main === "Snow") {
       emoji = "fa-snow-flake";
     } else {
       emoji = "fa-smog";
@@ -66,18 +68,18 @@ export default function SearchWeather() {
       <div className="container mt-5">
         <div className="row justify-content-center">
           <div className="col-md-4">
-            <div class="card text-white text-center border-0">
+            <div className="card text-white text-center border-0">
               <img
                 src={`https://source.unsplash.com/random/600×900/?${data.weather[0].main}`}
-                class="card-img"
+                className="card-img"
                 alt="..."
               />
               <div class="card-img-overlay">
-                <form onSubmit={handleSubmit}>
-                  <div class="input-group mb-4 w-75 mx-auto">
+                <form onSubmit={handleSubmit} className='search_bar'>
+                  <div className="input-group mb-4 w-75 mx-auto">
                     <input
                       type="search"
-                      class="form-control"
+                      className="form-control"
                       placeholder="Search City"
                       aria-label="Search City"
                       aria-describedby="basic-addon2"

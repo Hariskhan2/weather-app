@@ -1,0 +1,16 @@
+.card-img{
+    width:40rem !important;
+    
+}
+.container mt-5{
+    margin-left: 0;
+}
+.bg-dark{
+    margin-left: 5rem;
+width: 30rem;
+height: 30rem;
+}
+.search_bar{
+    margin-left: 5rem;
+    width: 30rem;
+}
